@@ -79,7 +79,7 @@ $.fn.dataTableExt.afnFiltering.push(
      */
 $(document).ready(function() {
     /* Initialise datatables */
-    var oTable = $('#job').dataTable();
+    var oTable = $('#jobs').dataTable();
 
     /* Add event listeners to the two range filtering inputs */
     $('#minsal').keyup( function() { oTable.fnDraw(); } );
