@@ -1,0 +1,55 @@
+<span>min</span><input type="text" id ="minsal"/>
+<span>max</span><input type="text"  id = "maxsal" />
+
+<h1>Listing jobs</h1>
+<table id="jobs">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Ctype</th>
+    <th>Salary</th>
+    <th>Experience level</th>
+    <th>Description</th>
+    <th>Additional info</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+   </thead>
+  <tbody>
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.title %></td>
+    <td><%= job.location %></td>
+    <td><%= job.ctype %></td>
+    <td><%= job.salary %></td>
+    <td><%= job.experience_level %></td>
+    <td><%= job.description %></td>
+    <td><%= job.additional_info %></td>
+    <td><%= link_to 'Show', job %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+<% end %>
+  </tbody>
+  <tfoot>
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Ctype</th>
+    <th>Salary</th>
+    <th>Experience level</th>
+    <th>Description</th>
+    <th>Additional info</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </tfoot>
+</table>
+
+<br />
+
+<%= link_to 'New Job', new_job_path %>
