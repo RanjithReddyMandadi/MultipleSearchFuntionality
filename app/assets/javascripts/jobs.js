@@ -3,7 +3,7 @@ $.fn.dataTableExt.afnFiltering.push(
     function( oSettings, aData, iDataIndex ) {
         var iMin1 = document.getElementById('minsal').value * 1;
         var iMax1 = document.getElementById('maxsal').value * 1;
-        var salary = aData[3].split(/-/)
+        var salary = aData[3].split(/-/);
         var salary1 = aData[3] == "-" ? 0 : parseInt(salary[0].replace(/[^\d.]/g,''))* 1;
         var salary2 = aData[3] == "-" ? 0 : parseInt(salary[1].replace(/[^\d.]/g,''))* 1;
          var iMin = parseInt(iMin1);
