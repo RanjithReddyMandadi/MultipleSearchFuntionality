@@ -19,7 +19,7 @@ $.fn.dataTableExt.afnFiltering.push(
         {
             return true;
         }
-        else if (( iMin <= salary1 && salary1 <= iMax ) || ( iMin <= salary2 && salary2 <= iMax ))
+        else if (( iMin <= salary1 && salary1 <= iMax ) && ( iMin <= salary2 && salary2 <= iMax ))
         {
             return true;
         }
