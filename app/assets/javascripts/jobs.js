@@ -12,8 +12,8 @@
 
 $.fn.dataTableExt.afnFiltering.push(
     function( oSettings, aData, iDataIndex ) {
-        var iMin = parseInt(document.getElementById('minsal').value) * 1;
-        var iMax = parseInt(document.getElementById('maxsal').value) * 1;
+        var iMin = parseInt(document.getElementById('minsal1').value) * 1;
+        var iMax = parseInt(document.getElementById('maxsal1').value) * 1;
         var salary = aData[3].split(/-/)
         var salary1 = aData[3] == "-" ? 0 : parseInt(salary[0].replace(/[^\d.]/g,''))* 1;
         var salary2 = aData[3] == "-" ? 0 : parseInt(salary[1].replace(/[^\d.]/g,''))* 1;
@@ -79,7 +79,7 @@ $.fn.dataTableExt.afnFiltering.push(
      */
 $(document).ready(function() {
     /* Initialise datatables */
-    var oTable = $('#jobs').dataTable();
+    var oTable = $('#job').dataTable();
 
     /* Add event listeners to the two range filtering inputs */
     $('#minsal').keyup( function() { oTable.fnDraw(); } );
@@ -87,7 +87,7 @@ $(document).ready(function() {
     oTable.columnFilter({aoColumns: [ null,
         { type: "text" },
         null,
-        { type: "text" },
+        null,
         null,
         null,
         null
