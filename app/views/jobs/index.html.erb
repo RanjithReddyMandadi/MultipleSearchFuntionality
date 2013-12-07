@@ -1,11 +1,8 @@
-
-
 <h2>Search jobs</h2>
 <br>
 <br>
-<span><b>Salary Range </b></span><input type="text" placeholder ="Minimum Salary" value = 0 id ="minsal"/>
-<span>- </span><input type="text" placeholder ="Maximum Salary" value = 0 id = "maxsal" /> <br><br><br><br>
-
+<span><b>Salary Range </b></span><input type="text" placeholder ="Minimum Salary"  id ="minsal"/>
+<span>- </span><input type="text" placeholder ="Maximum Salary"  id = "maxsal" /> <br><br><br><br>
 <table id="jobs">
   <thead>
   <tr>
@@ -32,15 +29,16 @@
     <td><%= job.description %></td>
     <td><%= job.additional_info %></td>
     <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%#= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%#= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 
 <% end %>
   </tbody>
   <tfoot>
   <tr>
-    <th></th>
+     <tr>
+    <th>Title</th>
     <th>Location</th>
     <th></th>
     <th></th>
@@ -50,6 +48,7 @@
     <th></th>
     <th></th>
     <th></th>
+  </tr>
   </tr>
   </tfoot>
 </table>
