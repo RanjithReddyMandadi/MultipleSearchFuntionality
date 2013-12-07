@@ -1,25 +1,26 @@
 $.fn.dataTableExt.afnFiltering.push(
     function( oSettings, aData, iDataIndex ) {
-        var iMin = document.getElementById('minsal').value) * 1;
-        var iMax = document.getElementById('maxsal').value) * 1;
+        var iMin = parseInt(document.getElementById('minsal').value) * 1;
+        var iMax = parseInt(document.getElementById('maxsal').value) * 1;
         var salary = aData[3].split(/-/)
         var salary1 = aData[3] == "-" ? 0 : parseInt(salary[0].replace(/[^\d.]/g,''))* 1;
         var salary2 = aData[3] == "-" ? 0 : parseInt(salary[1].replace(/[^\d.]/g,''))* 1;
 
-
-        if ( iMin == "" && parseInt(iMax) == "" )
+alert(iMin);
+        if ( iMin == 0 && iMax == 0 )
         {
             return true;
         }
-        else if (( parseInt(iMin) == "" && salary1 <= parseInt(iMax) )||( parseInt(iMin) == "" && salary2 <= parseInt(iMax) ))
+		
+        else if (( iMin == "" && salary1 <= iMax )||( iMin == "" && salary2 <= iMax ))
         {
             return true;
         }
-        else if (( parseInt(iMin) < salary1 && "" == parseInt(iMax) )||( parseInt(iMin) < salary2&& "" == parseInt(iMax) ))
+        else if (( iMin < salary1 && "" == iMax )||( iMin < salary2&& "" == iMax ))
         {
             return true;
         }
-        else if (( parseInt(iMin) <= salary1 && salary1 <= parseInt(iMax) ) || ( parseInt(iMin) <= salary2 && salary2 <= parseInt(iMax) ))
+        else if (( iMin <= salary1 && salary1 <= iMax ) || ( iMin <= salary2 && salary2 <= iMax ))
         {
             return true;
         }
