@@ -17,14 +17,17 @@ $.fn.dataTableExt.afnFiltering.push(
         {
             return true;
         }
-        else if (( iMin < salary1 && "" == iMax )||( iMin < salary2&& "" == iMax ))
+        else if (( iMin < salary1 && "" == iMax )||( iMin < salary2 && "" == iMax ))
         {
             return true;
         }
-        else if (( iMin <= salary1 && salary1 <= iMax ) || ( iMin <= salary2 && salary2 <= iMax ))
+       
+	else if (( iMin <= salary1 || iMin <= salary2) && (iMax>salary1 && (iMax<=salary2 || iMax>=salary2)))
         {
             return true;
+           
         }
+	
         return false;
     }
 );
